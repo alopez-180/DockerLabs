@@ -7,4 +7,4 @@
 
 3. ❯ `sudo bash auto_deploy.sh firsthacking.tar`
 
-![200](C:\Users\user\Desktop\FirstHaking images\Screenshot_1.png)
+![Screenshot_1](https://github.com/user-attachments/assets/aad568ee-f852-4f1a-bbda-689f75950794)
