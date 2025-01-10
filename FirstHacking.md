@@ -1,8 +1,8 @@
 # FistHacking - Laboratorio de "dockerlabs.es"
 
 ### Primeros pasos:
-1. Lo primero que tenemos que hacer es descargar el archivo `.tar` que contiene la máquina vulnerable (en este caso la del laboratorio "FirstHacking").
-2. Una vez hayamos descargado el archivo, veremos que hay un script llamado `auto_deploy.sh` junto con la máquina, por lo que solamente tendremos que ejecutar ese script para desplegar o borrar el laboratorio.
+1. **1.** Lo primero que tenemos que hacer es descargar el archivo `.tar` que contiene la máquina vulnerable (en este caso la del laboratorio "FirstHacking").
+2. **2.** Una vez hayamos descargado el archivo, veremos que hay un script llamado `auto_deploy.sh` junto con la máquina, por lo que solamente tendremos que ejecutar ese script para desplegar o borrar el laboratorio.
 3. ❯ `sudo bash auto_deploy.sh firsthacking.tar`
 
 ### Escaneo de Red
@@ -38,7 +38,7 @@ Ahora que sabemos el nombre del servicio y la versión, busqué un poco de infor
 
 Ahora que sabemos por dónde podemos acceder a la máquina, aprovechando las vulnerabilidades encontradas en el escaneo de red, vamos a proceder a conseguir una reverse shell. 
 
-1. El primer paso será buscar si hay algún exploit ya creado. Para ello, en la consola de nuestro Kali pondremos: 
+1. **1.** El primer paso será buscar si hay algún exploit ya creado. Para ello, en la consola de nuestro Kali pondremos: 
 
 ❯ `searchsploit`
 
@@ -46,11 +46,11 @@ Vemos que nos devuelve un listado con una serie de exploits que podemos usar. De
 
 Una opción es utilizando Python y la otra es utilizando la herramienta Metasploit. En mi caso personal, prefiero utilizar Metasploit, así que veremos cómo hacerlo con esta segunda opción. 
 
-2. Para abrir la herramienta Metasploit tendremos que escribir: 
+2. **2.** Para abrir la herramienta Metasploit tendremos que escribir: 
 
 ❯ `msfconsole`
 
-3. Con la consola abierta, procederemos a buscar el exploit para atacar al servicio vsftpd. Para realizar esta búsqueda pondremos:
+3. **3.** Con la consola abierta, procederemos a buscar el exploit para atacar al servicio vsftpd. Para realizar esta búsqueda pondremos:
 
 ❯ `search vsftpd`
 
@@ -61,13 +61,13 @@ Esto nos devolverá dos opciones disponibles:
 
 En este caso, usaremos la segunda opción (#1).
 
-4. Para seleccionar el exploit que queramos, utilizaremos el comando:
+4. **4.** Para seleccionar el exploit que queramos, utilizaremos el comando:
 
 `use (número del exploit)` en este caso, es la opción 1, por lo tanto pondremos:
 
 ❯ `use 1`
 
-5. Ahora que ya tenemos el exploit seleccionado, tendremos que revisar los parámetros obligatorios del exploit. Normalmente, nos pide que pongamos la IP de la máquina vulnerable, el puerto, algún proxy, entre otros. Para revisar lo que nos pide este exploit en concreto, utilizaremos el comando: 
+5. **5.** Ahora que ya tenemos el exploit seleccionado, tendremos que revisar los parámetros obligatorios del exploit. Normalmente, nos pide que pongamos la IP de la máquina vulnerable, el puerto, algún proxy, entre otros. Para revisar lo que nos pide este exploit en concreto, utilizaremos el comando: 
 
 ❯ `show options`
 
@@ -80,3 +80,4 @@ Y con esto tan sencillo, ya podemos lanzar el exploit con el comando:
 ❯ `run`
 
 Poco a poco nos irán apareciendo mensajes con el proceso que está llevando a cabo el exploit. En tan solo unos segundos, veremos que tendremos acceso a la máquina, estando en una reverse shell.
+
