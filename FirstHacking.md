@@ -48,7 +48,7 @@ Ahora que sabemos por dónde podemos acceder a la máquina, aprovechando las vul
 
 **1.** El primer paso será buscar si hay algún exploit ya creado. Para ello, en la consola de nuestro Kali pondremos: 
 
-❯ `searchsploit`
+❯ `searchsploit vsftpd`
 
 ![image](https://github.com/user-attachments/assets/02a9dd64-a432-46a7-8daf-649b4bc1ba01)
 
